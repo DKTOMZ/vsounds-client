@@ -46,7 +46,7 @@ export const Login = () => {
         const googleResponse = await loginWithGoogle();
         if (googleResponse.error) {showErrors('googleLoginError', googleResponse.error);}
         else {
-            if (state.route) {navigate(state.route, {replace:true});}
+            if (state) {navigate(state.route, {replace:true});}
             else {navigate('/', {replace:true});}
         }
     };
@@ -67,7 +67,7 @@ export const Login = () => {
         } else if (loginResponse.verifyEmail) {
             setVerifyEmailMsg(loginResponse.verifyEmail);
         } else {
-            if (state.route) {navigate(state.route, {replace:true});}
+            if (state) {navigate(state.route, {replace:true});}
             else {navigate('/', {replace:true});}
         }
         setLoading(false);   
