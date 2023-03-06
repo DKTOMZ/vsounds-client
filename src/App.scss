@@ -11,7 +11,7 @@ $darkblue: #2c3640;
 $orange: #fc9b2c;
 
 .carousel-indicators .active {
-    background-color: $orange;
+    background-color: $green;
 }
 
 .not-found {
@@ -327,7 +327,7 @@ body{
                 display: flex;
                 align-items: center; 
                 justify-content: center;
-                .button {
+                .button { 
                     margin-left: 10px; 
                     font-size: 22px; 
                     color: white; 
@@ -363,7 +363,7 @@ body{
                 padding: 0 20px;
                 background-color: white;
                 #search-icon {color: $green; margin-right: 10px;}
-                #search-input {@include inputBox()}
+                #search-input {@include inputBox(); background-color: inherit !important;}
                 &:focus-within {
                     outline: $lgreen solid 2px;
                 }
@@ -372,7 +372,6 @@ body{
                     max-height: 200px;
                     overflow: auto;
                     width: inherit;
-                    outline: $lgreen solid 2px;
                     top: 53px;
                     right: 0px;
                     border-radius: 5px;
@@ -402,7 +401,7 @@ body{
             padding: 0 20px;
             background-color: white;
             #search-icon {color: $green; margin-right: 10px;}
-            #search-input {@include inputBox()}
+            #search-input {@include inputBox(); background-color: inherit !important;}
             &:focus-within {
                 outline: $lgreen solid 2px;
             }
@@ -477,12 +476,11 @@ body{
         margin-bottom: 20px;
         width: fit-content;
         border-radius: 50%;
-        img {object-fit: cover; height: 130px; width: 120px; border-radius: inherit;}
+        img {object-fit: cover; height: 130px; width: 130px; border-radius: inherit;}
     }
     #toggle-password-change {
         width: fit-content; 
-        color: $orange; 
-        &:hover {color: white; cursor: pointer;}
+        color: $orange;
         @media (hover:hover) {&:hover {color: white; cursor: pointer;}}
         @media (hover:none) {&:active {color: white;}}
         margin: 0 auto;
@@ -613,7 +611,13 @@ body{
     #search-box2 {
         display: none;
     }
-    #carousel {width: 100%; margin-bottom: 40px;}
+    #carousel {
+        width: 100%; 
+        margin-bottom: 40px;
+        .carousel .carousel-control-prev .carousel-control-prev-icon, .carousel .carousel-control-next .carousel-control-next-icon {
+            background-color: $lgreen;
+        }
+    }
     #categories, #new-arrivals, #accessories{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

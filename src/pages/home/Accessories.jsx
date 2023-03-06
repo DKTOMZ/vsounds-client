@@ -39,7 +39,7 @@ export const Accessory = () => {
                         <div className="accessories">
                             {
                             products.map((value)=>{
-                                return <Link className="Card" key={value.name} to={`/product/?name=${encodeURIComponent(value.name)}`}>
+                                return <Link style={{textDecoration:'none'}} className="Card" key={value.name} to={`/product/?name=${encodeURIComponent(value.name)}`}>
                                     <CCard color="dark"  textColor="white">
                                         <CCardImage orientation="top" height={300} style={{filter:'brightness(80%)', objectFit: "cover"}} src={value.imageurl_and_colors[0].img || value.imageurl_and_colors[0].productImg} alt={value.name}/>
                                         <CCardBody>

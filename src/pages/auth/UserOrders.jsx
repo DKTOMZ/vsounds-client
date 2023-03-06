@@ -77,7 +77,7 @@ export const UserOrders = () => {
                                 </div>
                                 <div>
                                     <div></div>
-                                    <Link className="details" to='Products'>Details</Link>
+                                    <Link className="details" to={`/Order/?orderId=${order.customerId}`}>Details</Link>
                                 </div>
                             </div>
                         })

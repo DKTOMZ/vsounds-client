@@ -9,7 +9,7 @@ export const Category = () => {
     const location = useLocation();
     const query = new URLSearchParams(location.search).get('name');
     const [products,setProducts] = useState([]);
-    const [loading,setLoading] = useState(true);
+    const [loading,setLoading] = useState(true); 
     const [notFound,setNotFound] = useState('loading');
 
     useEffect(()=>{
@@ -39,7 +39,7 @@ export const Category = () => {
                     <div className="products">
                         {
                         products.map((value)=>{
-                            return <Link className="Card" key={value.name} to={`/product/?name=${encodeURIComponent(value.name)}`}>
+                            return <Link style={{textDecoration:'none'}} className="Card" key={value.name} to={`/product/?name=${encodeURIComponent(value.name)}`}>
                                 <CCard color="dark"  textColor="white">
                                     <CCardImage className="category-image" orientation="top" height={270} style={{filter:'brightness(90%)', objectFit: "cover"}} src={value.imageurl_and_colors[0].img || value.imageurl_and_colors[0].productImg} alt={value.name}/>
                                     <CCardBody>

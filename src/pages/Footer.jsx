@@ -20,14 +20,14 @@ export const Footer = () => {
                 <div id="company">
                     <hr/>
                     <h5>Company</h5>
-                    <button>About us</button>
-                    <button>Contact Us</button>
+                    <Link id="button">About us</Link>
+                    <Link id="button">Contact us</Link>
                 </div>
                 <div id="customer-service">
                     <hr/>
                     <h5>Customer Service</h5>
-                    <button>Support</button>
-                    <button>Warranty</button>
+                    <Link id="button">Support</Link>
+                    <Link id="button">Warranty</Link>
                 </div>
             </div>
             <div id="socials">
