@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from '../assets/logo.png';
-import { Category } from "./home/Category";
 
 export const Footer = () => {
     return (

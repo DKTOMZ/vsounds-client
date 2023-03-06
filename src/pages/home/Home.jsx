@@ -1,4 +1,4 @@
-import { CButton, CCard, CCardBody, CCardImage, CCardText, CCardTitle, CCarousel, CCol, CRow, CSpinner } from "@coreui/react";
+import { CButton, CCard, CCardBody, CCardImage, CCardText, CCardTitle, CCarousel, CSpinner } from "@coreui/react";
 import { CImage } from "@coreui/react";
 import { CCarouselItem } from "@coreui/react";
 import { CCarouselCaption } from "@coreui/react";
