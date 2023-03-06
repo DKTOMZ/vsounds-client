@@ -62,6 +62,7 @@ export const SignUp = () => {
             {verifyEmailMsg ? <UseModal title="Registration Success!" body={verifyEmailMsg} buttonText='Login' route="/Login"/> : null}
             <form id="signup-form" onSubmit={signup}>
                 <h2>Signup</h2>
+                <br/>
                 <div id="email-input" className="input">
                     <i className="fa-solid fa-envelope fa-lg"></i>
                     <input ref={emailInput} type="email" placeholder="Email..." name="email" value={signupEmail} onChange={(e)=>setSignupEmail(e.target.value)} id="user-email" required/>
@@ -78,6 +79,7 @@ export const SignUp = () => {
                 </div>
                 <ErrorBox error={signupError}/>
                 <button id="submit-button" disabled={loading}>Signup {loading ? <CSpinner style={{marginLeft:'10px'}}/>: null}</button>
+                <br/>
                 <div id="to-login-signup">Already a member? Login<Link className="to-login-signup" to="/Login">Here</Link></div>
             </form>
         </div>

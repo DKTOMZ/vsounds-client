@@ -100,6 +100,7 @@ export const Login = () => {
                 <ErrorBox error={loginError}/>
                 <Link id="reset-password" to="/ResetPassword">Forgot Password?</Link>
                 <button id="submit-button" disabled={loading}>Login {loading ? <CSpinner style={{marginLeft:'10px'}}/>: null}</button>
+                <br/>
                 <div id="to-login-signup">Don't have an account yet? Register<Link className="to-login-signup" to="/Signup">Here</Link></div>
             </form>
         </div>

@@ -358,7 +358,7 @@ body{
                 border-radius: 30px;
                 display: flex;
                 align-items: center;
-                width: 500px;
+                width: 400px;
                 position: relative;
                 padding: 0 20px;
                 background-color: white;
@@ -395,13 +395,14 @@ body{
         #search-box2{
             border-radius: 30px;
             align-items: center;
-            width: 500px;
+            width: 400px;
             position: relative;
-            height: 50px;
+            height: 40px;
             padding: 0 20px;
             background-color: white;
+            margin-bottom: 0;
             #search-icon {color: $green; margin-right: 10px;}
-            #search-input {@include inputBox(); background-color: inherit !important;}
+            #search-input {@include inputBox(); height: inherit; background-color: inherit !important;}
             &:focus-within {
                 outline: $lgreen solid 2px;
             }
@@ -440,7 +441,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 100px;
     #login-form, #signup-form, #reset-password-form {
         #reset-password {color: $orange; margin-bottom: 10px;}
         #reset-password, #to-login-signup {text-align: center;}
@@ -686,21 +687,26 @@ body{
         .results2 { display: block !important;}
         #search-icon, #search-input {display: initial;}
     }
-    #Nav #space { margin-bottom: 200px;}
+    #Nav #space { margin-bottom: 170px;}
     #search-box, #search-icon, #search-input, #search-box .results {display: none;}
 }
 
 @media screen and (max-width: 450px) {
-    #navbar {
-        #logo {font-size: 28px;}
-        #menu {
-            #button{
-                font-size: 18px;
-                margin-left: 10px;
+    #Nav {
+        #navbar {
+            #main {
+                #menu {
+                    .button{
+                        font-size: 20px;
+                        margin-left: 10px;
+                    }
+                }
             }
         }
     }
     h3{font-size: 20px;}
+    #logo img {height: 40px; width: 90px;}
+    #carousel .cimage{ height: 350px; }
 
 }
 

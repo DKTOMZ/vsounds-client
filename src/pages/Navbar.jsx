@@ -53,7 +53,6 @@ export const NavBar = () => {
                         }}}/>
                         : <>
                             <Link className="button" to="/Login">Login</Link>
-                            <Link className="button" to="/Signup">Signup</Link>
                         </>
                         }
                         <Link title="cart" className="button" to="/Cart">

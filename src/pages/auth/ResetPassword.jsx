@@ -48,6 +48,7 @@ export const ResetPassword = () => {
             {resetPasswordMsg ? <UseModal title="Password reset email sent!" body={resetPasswordMsg} buttonText='Login' route="/Login"/> : null}
             <form id="reset-password-form" onSubmit={resetPassword}>
                 <h2>Reset Password</h2>
+                <br/>
                 <div id="email-input" className="input">
                     <i className="fa-solid fa-envelope fa-lg"></i>
                     <input ref={emailInput} type="email" placeholder="Email..." name="email" value={resetPasswordEmail} onChange={(e)=>setResetPasswordEmail(e.target.value)} id="user-email" required/>

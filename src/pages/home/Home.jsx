@@ -49,7 +49,7 @@ export const Home  = () => {
                             <CCarousel controls indicators interval={3000} transition="crossfade">
                                 {featured.map((value)=>{
                                         return <CCarouselItem key={value.name}>
-                                            <CImage height={450} style={{filter:'brightness(60%)', objectFit:"cover"}} className="d-block w-100" src={value.imageurl_and_colors[0].img} alt={value.name} />
+                                            <CImage height={450} style={{filter:'brightness(60%)', objectFit:"cover"}} className="d-block w-100 cimage" src={value.imageurl_and_colors[0].img} alt={value.name} />
                                             <CCarouselCaption className="d-md-block">
                                                 <CButton className="cbutton" onClick={()=>navigate(`product/?name=${encodeURIComponent(value.name)}`)}>{value.name}</CButton>
                                                 <p>{value.short_desc}</p>
