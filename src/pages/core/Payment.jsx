@@ -69,7 +69,7 @@ const PaymentSummary = (props) =>{
                 <div id="title-decoration" style={{marginBottom:'30px'}}></div>
                 <button onClick={handleStripeCheckout} style={{marginBottom:'20px'}} className="buttons" disabled={loadingStripe}>
                     <i style={{marginRight:'10px'}} className="fa-brands fa-stripe fa-2xl"></i> 
-                    PAY WITH STRIPE {loadingStripe ? <CSpinner style={{marginLeft:'10px'}}/>: null}
+                    {loadingStripe ? <CSpinner style={{marginLeft:'10px'}}/>: null}
                 </button>
             </div>
         </div>
