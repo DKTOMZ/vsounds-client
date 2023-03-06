@@ -82,20 +82,13 @@ export const Home  = () => {
                         <div id="new-arrivals">
                             {newArrivals.length > 0 ?
                             newArrivals.map((value)=>{
-                                return <Link key={value.name} style={{textDecoration:'none'}} to={`/product/?name=${encodeURIComponent(value.name)}`}>
-                                    <CCard className="mb-3 Card2" color="dark" textColor="white">
-                                        <CRow className="g-0">
-                                            <CCol md={4}>
-                                                <CCardImage height="100%" style={{filter:'brightness(90%)', objectFit:"cover"}} src={value.imageurl_and_colors[0].img} alt={value.name} />
-                                            </CCol>
-                                            <CCol md={8}>
-                                                <CCardBody>
-                                                    <CCardTitle>{value.name}</CCardTitle>
-                                                    <CCardText>{value.short_desc}</CCardText>
-                                                    <CCardText>${value.price}</CCardText>
-                                                </CCardBody>
-                                            </CCol>
-                                        </CRow>
+                                return <Link style={{textDecoration:'none'}} key={value.name} to={`/product/?name=${encodeURIComponent(value.name)}`}>
+                                    <CCard key={value.name} className="Card" color="dark" textColor="white">
+                                        <CCardImage orientation="top" height={270} style={{filter:'brightness(90%)', objectFit:"cover"}} src={value.imageurl_and_colors[0].img} alt={value.name}/>
+                                        <CCardBody>
+                                            <CCardTitle>{value.name}</CCardTitle>
+                                            <CCardText>${value.price}</CCardText>
+                                        </CCardBody>
                                     </CCard>
                                 </Link>
                             }):<CSpinner color="success"/>}

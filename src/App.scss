@@ -14,6 +14,7 @@ $orange: #fc9b2c;
     background-color: $green;
 }
 
+
 .not-found {
     text-align: center;
     h1 {color: red;}
@@ -264,15 +265,7 @@ h3 {margin-bottom: 20px;}
     transition: transform .3s;
     @media (hover:none) {&:active {opacity: 0.8;}}
     @media(hover:hover) {
-        &:hover { transform: scale(1.05);}
-    }
-}
-
-.Card2 {
-    transition: transform .3s;
-    @media (hover:none) {&:active {opacity: 0.8;}}
-    @media(hover:hover) {
-        &:hover { transform: scale(1.01);}
+        &:hover { transform: scale(1.02);}
     }
 }
 
@@ -615,11 +608,40 @@ body{
     #carousel {
         width: 100%; 
         margin-bottom: 40px;
+        .carousel .carousel-inner .carousel-item .carousel-caption .cbutton {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 200px;
+            background-color: $green;
+            border: none;
+            &:disabled {
+                opacity: 0.8;
+                @media (hover:hover) {
+                    &:hover {background-color: $green; cursor: auto;}
+                }
+                @media (hover:none) {
+                    &:active {
+                        background: $green radial-gradient(circle, transparent 1%, $green 1%) center/15000%;;
+                        background-size: 100%;
+                    }
+                }
+            }
+            @media (hover:hover) {
+                &:hover {background-color: $darkblue; cursor: pointer;}
+            }
+            @media (hover:none) {
+                &:active {
+                    background: $darkblue radial-gradient(circle, transparent 1%, $darkblue 1%) center/15000%;;
+                    background-size: 100%;
+                }
+            }
+        }
         .carousel .carousel-control-prev .carousel-control-prev-icon, .carousel .carousel-control-next .carousel-control-next-icon {
             background-color: $lgreen;
         }
     }
-    #categories, #new-arrivals, #accessories{
+    #categories, #new-arrivals, #accessories, #new-arrivals{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px 40px;
@@ -628,7 +650,11 @@ body{
         small {color: $lwhite; font-size: 16px;}
     }
     #new-arrivals {
-        grid-template-columns: repeat(1, minmax(200px, 1fr));
+        .card-body .card-title{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
     }
 }
 
@@ -691,7 +717,7 @@ body{
     #search-box, #search-icon, #search-input, #search-box .results {display: none;}
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 659px) {
     #Nav {
         #navbar {
             #main {
@@ -704,9 +730,32 @@ body{
             }
         }
     }
+    #product .product-info .images-colors img {
+        height: 300px;
+    }
     h3{font-size: 20px;}
     #logo img {height: 40px; width: 90px;}
-    #carousel .cimage{ height: 350px; }
+    #carousel .cimage{ height: 300px; }
+    #category .products, #accessory .accessories {
+        gap: 15px;
+    }
+    .card {
+        flex-direction: row;
+        height: 100px;
+        img {height: 100%; width: 100px; border-radius: inherit;}
+        align-items: flex-start;
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding:  0 10px;
+            overflow: hidden;
+            * { margin: 0;}
+            .card-title { font-size: 18px;}
+            .card-text {font-size: 14px;}
+        }
+    }
 
 }
 
