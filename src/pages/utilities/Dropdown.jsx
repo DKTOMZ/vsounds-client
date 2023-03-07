@@ -3,7 +3,7 @@ import { CDropdown, CDropdownToggle, CDropdownMenu, CDropdownItem } from "@coreu
 import { Link } from "react-router-dom";
 
 export const UseDropdown = ({child1, child2, child3, child4}) => {
-    return <CDropdown dark>
+    return <CDropdown dark id="my-dropdown">
             <CDropdownToggle color="dark" className="dropdown-icon"><i className="fa-solid fa-user fa-lg"></i></CDropdownToggle>
                 <CDropdownMenu className="dropdown-menu">
                     <CDropdownItem className="dropdown-item-disable">{child1.text}</CDropdownItem>

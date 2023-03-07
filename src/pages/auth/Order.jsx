@@ -40,9 +40,9 @@ export const Order = () => {
                     </div>
                     {order.products.map((product,index)=>{
                         return <div style={{marginBottom:'10px',backgroundColor:'#2c3640', padding: '10px'}} key={index} className="order-card">
-                            <div className="desc">
+                            <div className="desc2">
                                 <div style={{marginRight:'10px'}}>ORDERED PRODUCT:</div>
-                                <p style={{float:'right'}}>{product.name}</p>
+                                <p>{product.name}</p>
                             </div>
                             <div className="desc">
                                 <div style={{marginRight:'10px'}}>PRICE:</div>
@@ -50,7 +50,7 @@ export const Order = () => {
                             </div>
                             <div className="desc">
                                 <div style={{marginRight:'10px'}}>IMAGE:</div>
-                                <img style={{float:'right'}} src={product.imageurl_and_colors.img} height={50} width={50}/>
+                                <img style={{float:'right'}} src={product.imageurl_and_colors.img} height={50} alt={product.name} width={50}/>
                             </div>
                             <div className="desc">
                                 <div style={{marginRight:'10px'}}>DELIVERY STATUS:</div>
@@ -61,7 +61,7 @@ export const Order = () => {
                     {order.products.map((product,index)=>{
                         return <div key={index} className="products content">
                             <div className="desc">
-                                <img src={product.imageurl_and_colors.img} height={100} width={100}/>
+                                <img src={product.imageurl_and_colors.img} alt={product.name} height={100} width={100}/>
                                 <div className="text">
                                     <p>{product.name}</p>
                                     <p>${product.price}</p>

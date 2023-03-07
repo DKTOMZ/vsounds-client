@@ -380,6 +380,9 @@ body{
                             @media(hover:hover){
                                 &:hover {color: $orange;}
                             }
+                            @media(hover:none){
+                                &:active {color: $orange;}
+                            }
                         }
                     }
                 }
@@ -391,7 +394,7 @@ body{
             width: 400px;
             position: relative;
             height: 40px;
-            padding: 0 20px;
+            padding: 0 10px;
             background-color: white;
             margin-bottom: 0;
             #search-icon {color: $green; margin-right: 10px;}
@@ -420,6 +423,9 @@ body{
                         transition: 0.3s;
                         @media(hover:hover){
                             &:hover {color: $orange;}
+                        }
+                        @media(hover:none){
+                            &:active {color: $orange;}
                         }
                     }
                 }
@@ -492,6 +498,15 @@ body{
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+        }
+        .desc2 {
+            margin-bottom: 40px;
+            p {
+                overflow: hidden;
+                text-align: left;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
         }
     }
     .products {
@@ -738,6 +753,10 @@ body{
             }
         }
     }
+    #Footers #socials a button .fa-brands { font-size: 30px;}
+    #Nav #navbar #menu #my-dropdown button{ background-color: transparent !important; padding: 0;}
+    .input input, button { height: 40px !important; font-size: 18px !important;}
+    #avatar img { height: 100px !important; width: 100px !important;}
     #product .product-info .images-colors img {
         height: 300px;
     }

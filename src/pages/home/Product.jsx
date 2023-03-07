@@ -19,19 +19,16 @@ export const Product = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     
-    useEffect(()=>{
-        loadData();
-    },[appData,query]);
+    useEffect(()=>{loadData();},[appData,query]);
 
-    useEffect(()=>{
-        cart.forEach((value,index)=>{
-            if (value.name === product.name) {return setItemExists(true);}
-        });
-    },[cart]);
+    useEffect(()=>{checkCart();},[cart]);
 
     const loadData = () => {
         if (appData) {
             const filter = appData.filter((value)=>value.name === query);
+            cart.forEach((value,index)=>{
+                if (value.name === filter[0].name) {return setItemExists(true);}
+            });
             if (filter.length > 0) { 
                 setProduct(filter[0]);
                 setActiveImgColor(filter[0].imageurl_and_colors[0]);
@@ -41,6 +38,12 @@ export const Product = () => {
                 setNotFound('Not found');
             }
         } 
+    };
+
+    const checkCart = () => {
+        cart.forEach((value,index)=>{
+            if (value.name === product.name) {return setItemExists(true);}
+        });
     };
 
     const addItem = () => {
