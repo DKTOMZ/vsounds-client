@@ -54,7 +54,7 @@ export const Cart = () => {
                                 <p id="label">Total</p>
                                 <p id="value">${ isNaN(shippingFee) ? cart.reduce((total,value)=>total+parseInt(value.price),0) : parseInt(shippingFee)+cart.reduce((total,value)=>total+parseInt(value.price),0)}</p>
                             </div>
-                            <Link id="checkout" to="/Payment"><button><i style={{marginRight:'10px',marginBottom:'5px',fontSize:'18px'}} className="fa-solid fa-lock"></i> Checkout</button></Link>
+                            <Link id="checkout" to="/Payment"><button id="submit-button"><i style={{marginRight:'10px',marginBottom:'5px',fontSize:'18px'}} className="fa-solid fa-lock"></i> Checkout</button></Link>
                     </div>
                     </div>
                      : <h4 style={{color:'#1DB954',marginBottom:'80px'}}><i className="fa-solid fa-face-frown"></i> Nothing here. Add some items</h4>}

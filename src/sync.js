@@ -7,6 +7,9 @@ const ordersRef = collection(db,'Orders');
 
 export const addUser = async(user) => {
     try {
+        let data = [];
+        (await getDocs(query(usersRef,where('uid','==',user.uid)))).forEach((doc)=>data.push(doc.data()));
+        if (data.length > 0) { return;} 
         await addDoc(usersRef,{
             uid: user.uid,
             role: 'customer'

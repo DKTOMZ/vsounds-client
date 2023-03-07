@@ -17,17 +17,19 @@ export const AuthProvider = ({children}) => {
     const dispatch = useDispatch();
 
     const registerUser = async(email,password) => {
+        let user = null;
         try {
-            const UserCredential =  await createUserWithEmailAndPassword(auth,email,password);
-            const addResponse = await addUser({uid : UserCredential.user.uid});
-            if (addResponse.error) {
-                await signOut(auth);
+            user =  await createUserWithEmailAndPassword(auth,email,password);
+            await signOut(auth);
+            const addResponse = await addUser({uid : user.user.uid});
+            if (addResponse) {
                 return {error:'Something went wrong. Try again'};
             }
+            await sendEmailVerification(user.user);
+            return {verifyEmail:'Please check email/spam folder to verify your account then login'};
         } catch (error) {
             return {error: error.code}
         }
-        return emailUserVerification();
     };
     
     const loginWithGoogle = async() => {
@@ -52,25 +54,19 @@ export const AuthProvider = ({children}) => {
             return {error: error.code}
         }
 
-        try {
-            const UserCredential = await signInWithEmailAndPassword(auth,email,password);
-            if (auth.currentUser.emailVerified) {return UserCredential.user}
-        } catch (error) {
-            return {error: error.code}
-        }
+        let user = null;
 
-        return emailUserVerification();
-    };
-
-    const emailUserVerification = async() => {
         try {
-            await sendEmailVerification(auth.currentUser);
+            user = await signInWithEmailAndPassword(auth,email,password);
+            if (user.user.emailVerified) {return user.user}
+            await sendEmailVerification(user.user);
             await signOut(auth);
             return {verifyEmail:'Please check email/spam folder to verify your account then login'};
         } catch (error) {
             return {error: error.code}
         }
-    }
+
+    };
 
     const resetUserPassword = async(email) => {
         try {
@@ -127,7 +123,7 @@ export const AuthProvider = ({children}) => {
         return unsubscribe;
     },[]);
 
-    const localUser = {registerUser,loginWithGoogle,loginUser,emailUserVerification,resetUserPassword,updateUserProfile,logOutUser,currentUser};
+    const localUser = {registerUser,loginWithGoogle,loginUser,resetUserPassword,updateUserProfile,logOutUser,currentUser};
 
     return (
         <AuthContext.Provider value={localUser}>
