@@ -71,6 +71,13 @@ const PaymentSummary = (props) =>{
                     <i style={{marginRight:'10px'}} className="fa-brands fa-stripe fa-2xl"></i> 
                     {loadingStripe ? <CSpinner style={{marginLeft:'10px'}}/>: null}
                 </button>
+                <p>
+                    Don't use real cards, use
+                    <a className="stripe-link" href="https://stripe.com/docs/testing#use-test-cards" rel="noreferrer" target="_blank">
+                         stripe test cards 
+                    </a>
+                    when paying 
+                </p>
             </div>
         </div>
     );

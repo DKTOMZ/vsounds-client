@@ -581,6 +581,14 @@ body{
     #shipping-payment {width: 60%; margin-right: 30px;}
     #shipping-summary, #payment, #cart {border: 1px solid $lgray; border-radius: 3px; padding: 20px;}
     #shipping-payment {
+        #payment .stripe-link {
+            color: $lgreen;
+            margin: 0 5px;
+            @media (hover:hover) {
+                &:hover {color: $orange;}
+            }
+            @media (hover:none) {&:active {color: $orange;}}
+        }
         #shipping-summary {
             margin-bottom: 20px;
             #shipping-method {
