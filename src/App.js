@@ -24,6 +24,12 @@ const ProtectedRoute = ({ children, props }) => {
     return children;
 };
 
+const UnprotectedRoute = ({ children }) => {
+    const {currentUser} = useAuth();
+    if (currentUser) { return <Navigate to='/' replace/>}
+    return children;
+};
+
 export const App = () => {
     return (
         <div id="App">
@@ -58,9 +64,21 @@ export const App = () => {
                         <OrderComplete />
                     </ProtectedRoute>
                 }/>
-                <Route path="Login" element={<Login />}/>
-                <Route path="Signup" element={<SignUp />}/>
-                <Route path="ResetPassword" element={<ResetPassword />}/>
+                <Route path="Login" element={
+                    <UnprotectedRoute>
+                        <Login />
+                    </UnprotectedRoute>
+                }/>
+                <Route path="Signup" element={
+                    <UnprotectedRoute>
+                        <SignUp />
+                    </UnprotectedRoute>
+                }/>
+                <Route path="ResetPassword" element={
+                    <UnprotectedRoute>
+                        <ResetPassword />
+                    </UnprotectedRoute>
+                }/>
                 <Route path="Cart" element={<Cart />}/>
                 <Route path="*" element={<NotFound />} />
             </Routes>

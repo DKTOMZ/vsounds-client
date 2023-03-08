@@ -23,7 +23,7 @@ export const Cart = () => {
                                             <img style={{objectFit:'cover'}} src={value.imageurl_and_colors.img} alt={value.name}/>
                                         </div>
                                         <div id="product-details">
-                                            <p id="product-name">{value.name}</p>
+                                            <Link to={`/product/?name=${encodeURIComponent(value.name)}`} id="product-name">{value.name}</Link>
                                             <p id="product-category">{`${value.type} > ${value.category}`}</p>
                                             <p id="product-category">In stock: <span style={{color:'white'}}>{value.stock}</span></p>
                                             <p id="product-price2">${value.price}</p>

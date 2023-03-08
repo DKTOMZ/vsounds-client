@@ -88,7 +88,14 @@ $orange: #fc9b2c;
         #product-details {
             #product-category {color: $gray; font-size: 14px;}
             #product-quantity {font-size: 14px;}
-            #product-name {font-size: 16px; margin-right: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+            text-overflow: ellipsis;
+            #product-name {
+                font-size: 16px; 
+                margin-right: 10px; 
+                white-space: nowrap;
+                overflow: hidden; 
+                text-overflow: ellipsis;
+            }
             #product-price2 {color: white; font-size: 14px; display: none;}
             * {margin-bottom: 2px;}
             overflow: hidden;
@@ -582,6 +589,16 @@ body{
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        #cart #cart-card #product-details #product-name {
+            text-decoration: none;
+            color: white;
+            @media (hover:hover) {
+                &:hover { color: $orange;}
+            }
+            @media (hover:none){
+                &:active { color: $orange;}
+            }
+        }
         #cart, #price-and-total {border: 1px solid $lgray; border-radius: 3px; padding: 20px;}
         #cart {@include cart(); width: 60%; margin-right: 30px;}
         #price-and-total {@include priceAndTotal(); flex-grow: 1;}
@@ -794,6 +811,9 @@ body{
         #login-form, #signup-form, #reset-password-form {
             button {width: 100% !important; font-size: 18px !important;}
         }
+    }
+    #cart-page #cart-and-pricing #cart #cart-card #product-image {
+        height: 70px; width: 70px;
     }
     #user-profile {
         display: block;
