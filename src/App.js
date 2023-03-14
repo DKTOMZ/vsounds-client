@@ -17,6 +17,10 @@ import { Product } from "./pages/home/Product";
 import { OrderComplete } from "./pages/core/OrderComplete";
 import { UserOrders } from "./pages/auth/UserOrders";
 import { Order } from "./pages/auth/Order";
+import { AboutUs } from "./pages/About us";
+import { Contact } from "./pages/Contact";
+import { Support } from "./pages/Support";
+import { Warranty } from "./pages/Warranty";
 
 const ProtectedRoute = ({ children, props }) => {
     const {currentUser} = useAuth();
@@ -39,6 +43,10 @@ export const App = () => {
                 <Route path="category/?" element={<Category />}/>
                 <Route path="accessory/?" element={<Accessory />}/>
                 <Route path="product/?" element={<Product />}/>
+                <Route path="About" element={<AboutUs />}/>
+                <Route path="Contact" element={<Contact />}/>
+                <Route path="Support" element={<Support />}/>
+                <Route path="Warranty" element={<Warranty />}/>
                 <Route path="Profile" element={
                     <ProtectedRoute props={{initial:'/Profile'}}>
                         <UserProfile />

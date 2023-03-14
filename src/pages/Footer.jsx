@@ -19,14 +19,14 @@ export const Footer = () => {
                 <div id="company">
                     <hr/>
                     <h5>Company</h5>
-                    <Link id="button">About us</Link>
-                    <Link id="button">Contact us</Link>
+                    <Link id="button" to={'/About'}>About us</Link>
+                    <Link id="button" to={'/Contact'}>Contact us</Link>
                 </div>
                 <div id="customer-service">
                     <hr/>
                     <h5>Customer Service</h5>
-                    <Link id="button">Support</Link>
-                    <Link id="button">Warranty</Link>
+                    <Link id="button" to={'/Support'}>Support</Link>
+                    <Link id="button" to={'/Warranty'}>Warranty</Link>
                 </div>
             </div>
             <div id="socials">

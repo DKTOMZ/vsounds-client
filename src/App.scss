@@ -305,6 +305,18 @@ body{
     align-items: center; 
 }
 
+.about, .contact{
+    a {
+        color: $lgreen;
+        @media (hover:hover) {
+            &:hover { color: $orange;}
+        }
+        @media (hover:none) {
+            &:active { color: $orange;}
+        }
+    }
+}
+
 #Nav {
     #navbar {
         position:fixed;
