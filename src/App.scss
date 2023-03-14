@@ -444,7 +444,7 @@ body{
     justify-content: center;
     margin-bottom: 100px;
     #login-form, #signup-form, #reset-password-form {
-        #reset-password {color: $orange; margin-bottom: 10px;}
+        #reset-password {color: $orange; margin: 0 auto; margin-bottom: 10px; width: fit-content;}
         #reset-password, #to-login-signup {text-align: center;}
         .to-login-signup {color: $orange; margin-left: 5px; }
         .google-btn {
