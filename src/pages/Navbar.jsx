@@ -22,7 +22,6 @@ export const NavBar = () => {
                 <div id="main">
                     <Link to="/" id="logo" name='logo'><img src={logo} height={50} width={120} alt="logo"/></Link>
                     <div id="search-box">
-                        <i id="search-icon" className="fa-solid fa-magnifying-glass fa-lg"></i>
                         <input type="text" onChange={(e)=>setSearchQuery(e.target.value)} value={searchQuery} placeholder="Search a guitar..." id="search-input" name="search-input"/>
                         {appData.length > 0 && searchQuery !== '' ?
                             <div className="results">
@@ -64,7 +63,6 @@ export const NavBar = () => {
                     </div>
                 </div>
                 <div id="search-box2">
-                        <i id="search-icon" className="fa-solid fa-magnifying-glass fa-lg"></i>
                         <input type="text" onChange={(e)=>setSearchQuery(e.target.value)} value={searchQuery} placeholder="Search a guitar..." id="search-input" name="search-input"/>
                         {appData.length > 0 && searchQuery !== '' ?
                             <div className="results2">

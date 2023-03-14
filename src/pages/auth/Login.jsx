@@ -13,6 +13,7 @@ export const Login = () => {
     const [loginError, setLoginError] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [loadingGoogle, setLoadingGoogle] = useState(false);
     const emailInput = useRef();
     const passwordInput = useRef();
     const navigate = useNavigate();
@@ -42,6 +43,7 @@ export const Login = () => {
     const clearErrors = () => setLoginError('');
 
     const loginGoogle = async() => {
+        setLoadingGoogle(true);
         clearErrors();
         const googleResponse = await loginWithGoogle();
         if (googleResponse.error) {showErrors('googleLoginError', googleResponse.error);}
@@ -49,6 +51,7 @@ export const Login = () => {
             if (state) {navigate(state.route, {replace:true});}
             else {navigate('/', {replace:true});}
         }
+        setLoadingGoogle(false);
     };
 
     const login = async(e) => {
@@ -78,7 +81,7 @@ export const Login = () => {
             {verifyEmailMsg ? <UseModal title="Verify Email!" body={verifyEmailMsg} buttonText='Close' route="/Login"/> : null}
             <form id="login-form" onSubmit={login}>
                 <h2>Login</h2>
-                <div className="google-btn" onClick={loginGoogle}><i className="fa-brands fa-google"></i> Login with google</div>
+                <button className="google-btn"  disabled={loadingGoogle} onClick={loginGoogle}><i className="fa-brands fa-google"></i> Login with google {loadingGoogle ? <CSpinner style={{marginLeft:'10px'}}/>: null}</button>
                 <hr />
                 <div id="email-input" className="input">
                     <i className="fa-solid fa-envelope fa-lg"></i>
