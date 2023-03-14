@@ -16,6 +16,10 @@ export const Category = () => {
         loadData();
     },[appData]);
 
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    },[query])
+
     const loadData = () => {
         if (appData) {
             const filter = appData.filter((value)=>value.category === query);

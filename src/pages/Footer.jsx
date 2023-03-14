@@ -10,8 +10,8 @@ export const Footer = () => {
                 <div id="products">
                     <hr/>
                     <h5>Products</h5>
-                    <Link id="button" to={`/category/?name=Electric`}>Acoustic guitars</Link>
-                    <Link id="button" to={`/category/?name=Acoustic`}>Electric guitars</Link>
+                    <Link id="button" to={`/category/?name=Acoustic`}>Acoustic guitars</Link>
+                    <Link id="button" to={`/category/?name=Electric`}>Electric guitars</Link>
                     <Link id="button" to={`/category/?name=Bass`}>Bass guitars</Link>
                     <Link id="button" to={`/category/?name=Amps`}>Amplifiers</Link>
                     <Link id="button" to={`/accessory/?name=Pedals`}>Pedals</Link>
