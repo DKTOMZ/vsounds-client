@@ -14,11 +14,8 @@ export const Category = () => {
 
     useEffect(()=>{
         loadData();
-    },[appData]);
-
-    useEffect(()=>{
         window.scrollTo(0,0);
-    },[query])
+    },[appData,query]);
 
     const loadData = () => {
         if (appData) {

@@ -14,7 +14,7 @@ export const Accessory = () => {
 
     useEffect(()=>{
         loadData();
-    },[appData]);
+    },[appData,query]);
 
     const loadData = () => {
         if (appData) {
